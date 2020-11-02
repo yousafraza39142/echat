@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./styles/fonts";
+@import "./styles/variables";
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/*
+=================================
+          BUTTONS
+=================================
+*/
+._button {
+  border: none;
+  background: none;
+  font-family: Montserrat, serif;
+  border-radius: 2px;
+  transition: .1s ease-in-out;
+  user-select: none;
+
+
+  &._primary {
+    border: 1px solid $color-primary;
+    background: $color-primary;
+    color: $color-text-light;
+
+    &:hover {
+      border: 1px solid $color-primary;
+      color: $color-primary;
+      background: white;
+    }
+  }
+
+
+  ._text-white {
+    color: white;
+  }
+
+  &._large {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  &._small {
+    font-size: 8px;
+    padding: 5px 10px;
+  }
+}
+
+
+/*
+==========================
+        Inputs
+==========================
+ */
+.input-form-wrapper {
+  width: 250px;
+  align-items: start;
+
+  .input-form {
+    position: relative;
+    align-items: start;
+    padding-top: 5px;
+    label {
+      position: absolute;
+      left: 3px;
+      bottom: 12px;
+      font-size: 12px;
+      color: grey;
+      transition: .2s ease-in-out;
+
+    }
+    input {
+      background: transparent;
+      padding: 15px 3px;
+      border: none;
+      border-bottom: 1px solid  $color-primary;
+      outline: none;
+      width: 100%;
+      font-size: 12px;
+
+      // For animation of label when focus or text is in-there
+      &:focus, &:valid  {
+
+        ~ label {
+          transform: translateY(-90%);
+          color: $color-primary;
+          font-size: 8px;
+          padding-left: 0;
+        }
+      }
+
+      &.ng-invalid.ng-touched  {
+        border-bottom: 1px solid $color-error;
+        ~ label {
+          color: $color-error;
+        }
+      }
+    }
+
+  }
+
+  .error {
+    display: inline-block;
+    color: $color-error;
+    padding: 2px 0 0 3px;
+    margin-top: 3px;
+  }
+}
+
+
+
+//=======================
+//      TEXT SIZES
+//=========================
+
+.small-text {
+  font-size: 10px;
+  padding: 0;
+}
+
+/*
+============================
+          Margins
+============================
+*/
+
+.mr-t-1 { margin-top: 1px; }
+.mr-t-2 { margin-top: 2px; }
+.mr-t-3 { margin-top: 3px; }
+.mr-t-4 { margin-top: 4px; }
+.mr-t-5 { margin-top: 5px; }
+.mr-t-6 { margin-top: 6px; }
+.mr-t-7 { margin-top: 7px; }
+.mr-t-8 { margin-top: 8px; }
+.mr-t-9 { margin-top: 9px; }
+.mr-t-10 { margin-top: 10px; }
+
+.mr-b-1 { margin-bottom: 1px; }
+.mr-b-2 { margin-bottom: 2px; }
+.mr-b-3 { margin-bottom: 3px; }
+.mr-b-4 { margin-bottom: 4px; }
+.mr-b-5 { margin-bottom: 5px; }
+.mr-b-6 { margin-bottom: 6px; }
+.mr-b-7 { margin-bottom: 7px; }
+.mr-b-8 { margin-bottom: 8px; }
+.mr-b-9 { margin-bottom: 9px; }
+.mr-b-10 { margin-bottom: 10px; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

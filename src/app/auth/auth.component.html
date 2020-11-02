@@ -1,0 +1,28 @@
+<div class="card-wrap">
+  <div class="back-drop" *ngIf="isLoading">
+    <div class="container">
+      <ng-lottie [options]="options" [styles]="styles"></ng-lottie>
+    </div>
+  </div>
+  <div class="form-container">
+    <app-logo></app-logo>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+      <div class="input-form-wrapper">
+        <div class="input-form">
+          <input id="username" ngModel name="email" required autocomplete="off" type="text">
+          <label for="username">Username</label>
+        </div>
+        <small *ngIf="loginForm.controls?.email?.invalid && loginForm.controls?.email?.touched" class="small-text error">Invalid/Required</small>
+      </div>
+      <div class="input-form-wrapper">
+        <div class="input-form">
+          <input id="password" [autocomplete]="'false'"  ngModel name="password" autocomplete="off" required type="password">
+          <label for="password">Password</label>
+        </div>
+        <small *ngIf="loginForm.controls?.password?.invalid && loginForm.controls?.password?.touched" class="small-text error">Invalid/Required</small>
+      </div>
+      <br>
+      <button type="submit" class="_button _large _primary _text-white mr-t-10">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+
+.card-wrap {
+  .form-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    app-logo{
+      //display: inline-block;
+      width: 300px;
+      height: 300px;
+      margin-right: 32px;
+      border-right: 1px solid $color-text-extra-light;
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .card-wrap {
+    .form-container {
+      flex-direction: column;
+
+      app-logo {
+        margin-right: 0;
+        border-right: none;
+
+      }
+    }
+  }
+}
+
+
+
+.back-drop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: $back-drop-zindex;
+  pointer-events: none;
+
+  .container {
+    pointer-events: all;
+  }
+}
